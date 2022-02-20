@@ -49,10 +49,10 @@ function handleClick(e){
         <div class="title">Present Value Calculator</div>
         <form  >            
 
-       
+        <Field name ="fv" desc="Future Value" handleChange = {handleChange}/>
         <Field name="rate" desc="Rate" handleChange = {handleChange}/>          
         <Field name ="nper" desc="Periods" handleChange = {handleChange} />
-        <Field name ="fv" desc="Future Value" handleChange = {handleChange}/>
+       
 
 
               <div >
