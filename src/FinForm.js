@@ -52,11 +52,11 @@ function handleClick(e){
         <Field name ="fv" desc="Future Value" handleChange = {handleChange}/>
         <Field name="rate" desc="Rate" handleChange = {handleChange}/>          
         <Field name ="nper" desc="Periods" handleChange = {handleChange} />
-       
+        <Field name ="pv" desc="Present Value" value = {formatter.format(calcSolution)} readonly/>
 
 
               <div >
-                <h3 class="result">{formatter.format(calcSolution)}</h3>
+                <h3 class="result">PV: = {formatter.format(calcSolution)}</h3>
               </div>
               <button type="button" class="submit" onClick={handleClick}>Calculate</button>
             
