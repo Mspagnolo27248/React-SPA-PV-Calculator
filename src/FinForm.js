@@ -12,7 +12,6 @@ function FinForm(){
   })
 
 
-
  function handleChange(event){
    const {name,value} = event.target
    setParams(prevState => ({
@@ -23,18 +22,14 @@ function FinForm(){
 
 function handleClick(e){     
      const result = pv(params.rate,params.fv,params.nper)
-     setCalcSolution(result)
-     
+     setCalcSolution(result)     
   }
 
   var formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
-    currency: 'USD',
-  
-    // These options are needed to round to whole numbers if that's what you want.
-    //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
-    //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+    currency: 'USD', 
   });
+
   function pv(rate,fv,nper){
      const _fv = parseFloat(fv)
      const _rate = parseFloat(rate)
@@ -47,19 +42,18 @@ function handleClick(e){
     return(
         <div class="fin-div">
         <div class="title">Present Value Calculator</div>
-        <form  >            
+        <form  >          
 
         <Field name ="fv" desc="Future Value" handleChange = {handleChange}/>
         <Field name="rate" desc="Rate" handleChange = {handleChange}/>          
         <Field name ="nper" desc="Periods" handleChange = {handleChange} />
         <Field name ="pv" desc="Present Value" value = {formatter.format(calcSolution)} readonly/>
 
-
-              <div >
-                <h3 class="result">PV: = {formatter.format(calcSolution)}</h3>
-              </div>
-              <button type="button" class="submit" onClick={handleClick}>Calculate</button>
-            
+        <div >
+          <h3 class="result">PV: = {formatter.format(calcSolution)}</h3>
+        </div>
+        <button type="button" class="submit" onClick={handleClick}>Calculate</button>
+      
         </form>
 
     </div>

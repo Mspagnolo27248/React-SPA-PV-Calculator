@@ -5,11 +5,9 @@ import FinForm from "./FinForm";
 
 function App() {
   return (
-    <div className="App">
-
-      
+    <div className="App">      
       <FinForm />
-
+      
       <div class="right-block" style={{ float: "left", width: "75%" }}>
 
         <div style= {{textAlign:"center",marginBottom:"50px"}}>
@@ -17,7 +15,6 @@ function App() {
           <br />
           <img src="/img/img-pv.png" alt="Present Value Formula" />
         </div>
-
      
       <div style={{ height: "500px" }}>
         <ul >
